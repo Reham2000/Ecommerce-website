@@ -1,6 +1,8 @@
 <?php
 session_start();
 ob_start(); 
+$boot = "true";
+$script="main.js";
 $style = "style.css";
 include 'init.php';
 ?>

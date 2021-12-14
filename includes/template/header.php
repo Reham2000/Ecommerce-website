@@ -12,7 +12,9 @@
     <!-- For Responsive mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap -->
+    <?php if (@$boot == "true"){?>
     <link rel="stylesheet" href="<?php echo $cssPath?>bootstrap.min.css">
+    <?php }?>
     <!-- Font Awesome  -->
     <link rel="stylesheet" href="<?php echo $cssPath?>all.min.css">
     <!-- Owl.carousel Plugin -->

@@ -8,7 +8,7 @@
     <script src="<?php echo $jsPath?>slick.min.js"></script>
     <script src="asset/js/scripts.js"></script>
     <script src="layout/js/datatables-demo.js"></script>
-    <script type="module" src="<?php echo $jsPath?>main.js"></script>
+    <script type="module" src="<?php echo $jsPath?><?php echo $script ?>"></script>
 
 </body>
 

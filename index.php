@@ -2,6 +2,7 @@
 session_start();
 ob_start(); 
 $style = "style.css";
+$script="main.js";
 include 'init.php';
 ?>
 

@@ -1,7 +1,9 @@
 <?php
 session_start();
 ob_start(); 
+$boot = "true";
 $style = "style.css";
+$script="main.js";
 include 'init.php';
 ?>
     <!-- For Loading Screen -->

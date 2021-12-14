@@ -3,6 +3,8 @@ ob_start();
 session_start();
 $page="dash";
 $style = "style.css";
+$boot = "true";
+$script="main.js";
 require "init.php";
 // if(isset($_SESSION['role'])){
 // $patients=getAllData('patients');
