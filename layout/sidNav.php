@@ -9,7 +9,6 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">Content</div>
                             
-                            <?php if($_SESSION['role'] == "1"){ ?>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts9" aria-expanded="false" aria-controls="collapseLayouts9">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Admins
@@ -21,7 +20,6 @@
                                     <a class="nav-link" href="<?php echo "all_admins.php";?>">Edit / Delete Admin</a>
                                 </nav>
                             </div>
-                            <?php  } ?>
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts5" aria-expanded="false" aria-controls="collapseLayouts5">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>

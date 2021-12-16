@@ -7,7 +7,7 @@ date_default_timezone_set('Africa/Cairo');
     $lang           = "includes/languages/";
 
 
-    // include "connect_db.php";
+    include "connect_db.php";
     include $tempPath . "header.php";
     include $funPath . "function.php";
 

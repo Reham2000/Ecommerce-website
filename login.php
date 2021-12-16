@@ -95,7 +95,7 @@ session_start();
             color: #acacac;
             transition: 0.5s;
             font-size: 1.1rem;
-            margin-right: 5px;" class="fal fa-filter"></i>
+            margin-right: 5px;" class="fal fa-filter">Gender</i>
             <select class="custom-select ui search dropdown" name="gender" id="gender" required>
                 <option selected disable ddefault  value="">Gender</option>
                 <option value="male">Male</option>
