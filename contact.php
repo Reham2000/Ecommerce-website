@@ -5,6 +5,65 @@ $boot = "true";
 $style = "style.css";
 $script="main.js";
 include 'init.php';
+
+
+if ($_SERVER["REQUEST_METHOD"]=="POST") {
+    date_default_timezone_set('Africa/Cairo');
+
+    $name=FILTER_VAR($_POST['userName'],FILTER_SANITIZE_STRING);
+    $email=FILTER_VAR($_POST['userEmail'],FILTER_SANITIZE_EMAIL);
+    $msg=FILTER_VAR($_POST['userMessage'],FILTER_SANITIZE_STRING);
+    $phone=FILTER_VAR($_POST['userPhone'],FILTER_SANITIZE_NUMBER_INT);
+    $header="from:".$email;
+    $time= date("Y/m/d . h:i:s");
+    $formErrors = array ();
+    if(empty($name)||strlen($name)<3){
+      $formErrors[] = "
+      <script>
+          toastr.error('Please fill the name field and it should be more than 3 letters.')
+      </script>";
+      $name_error="border border-danger";
+    }
+    if (empty($email)) {
+        $formErrors[] = "
+        <script>
+            toastr.error('Please fill the email field.')
+        </script>";
+        $email_error="border border-danger";
+    }
+    if (empty($phone) || strlen((string)$phone)<11) {
+        $formErrors[] = "
+        <script>
+            toastr.error('Please fill the phone field With 11 Digit.')
+        </script>";
+        $phone_error="border border-danger";
+    }
+    if (empty($msg)) {
+        $formErrors[] = "
+        <script>
+            toastr.error('Please fill the message field.')
+        </script>";
+        $message_error="border border-danger";
+
+    }       
+    
+    if (empty($formErrors)){
+
+        //=================================== NEED UPDATE IN FUTURE =============================
+        mail("amressa201611@gmail.com","Message From Website",$email,$header . "\r\n" ."CC: amressa201611@gmail.com". "\r\n" .$msg);
+        addmsg($name,$email,$phone,$msg);
+                
+    }
+}
+
+
+if (isset($formErrors)){ 
+    foreach($formErrors as $error){
+        echo $error;
+    }
+}
+
+
 ?>
     <!-- For Loading Screen -->
     <div class="loading d-flex justify-content-center align-items-center">
@@ -24,36 +83,25 @@ include 'init.php';
     <!-- Start Header -->
     <header >
         <!-- Start Main-header -->
-        <section id="Main_header" class="py-2">
+        <section style="padding: 30px 0 !important;" id="Main_header" class="py-2">
             <div class="container">
                 <div class="row  align-items-center ">
     
-                    <div class="col-lg-2 col-sm-3 col-3 order-1">
-                        <div class="logo pt-2">
+                    <div class="col-md-2 brand_name">
+                        <div class="logo">
                             <a href="#">OneTech</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right mt-0 mt-md-4">
-                        <form id="Main_head_form" class="position-relative d-none d-md-block">
+                    <div class="col-md-7">
+                        <form id="Main_head_form" class=" m-auto position-relative d-none d-md-block">
                             <input class="form-control" type="text" placeholder="Search For Products..." required>
-                            <div class="dropdown_list">
-                                <span class="selected-category">All Categories </span>
-                                <i class="fas fa-angle-down"></i>
-                                <ul class=" custom_header list-unstyled shadow">
-                                    <li>All Categories</li>
-                                    <li>Computers</li>
-                                    <li>Laptops</li>
-                                    <li>Cameras</li>
-                                    <li>Hardware</li>
-                                    <li>Smartphones</li>
-                                </ul>
-                            </div>
+                           
                             <button class="btnSubmit" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="d-flex justify-content-center align-items-center me-3 me-sm-5">
+                    <div class="col-md-3 cart_place">
+                        <div style="justify-content: center;" class="wishlist_cart d-flex">
+                            <div class="d-flex justify-content-center mr-5 align-items-center me-3 me-sm-5">
                                 <div class="image">
                                     <img class="w-100" src="img/wishlist_cart/download.webp" alt="">
                                 </div>
@@ -246,25 +294,25 @@ include 'init.php';
                 <div class="col-md-10 col-12">
                     <div id="ContactUs">
                         <h2 class="mb-5">Get in Touch</h2>
-                        <form id="form">
+                        <form id="form" method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
                             <div class="row g-4 mb-3">
                                 <div class="col-md-4">
-                                    <input id="userName" type="text" name="userName" class="form-control" placeholder="Name">
+                                    <input id="userName" type="text" value = "<?php if(isset($name)){ echo $name;} ?>" name="userName" class="<?php echo $name_error;?> form-control" placeholder="Name">
                                     <p class=" mt-2 d-none text-danger" id="userNameReq">name is required.</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <input id="userEmail" type="email" name="userEmail" class="form-control" placeholder="Email">
+                                    <input id="userEmail" type="email" value = "<?php if(isset($email)){ echo $email;} ?>" name="userEmail" class="<?php echo $email_error;?> form-control" placeholder="Email">
                                     <p class=" mt-2 d-none text-danger" id="userEmailReq">Email is required.</p>
                                 </div>
                                 <div class="col-md-4">
-                                    <input id="userPhone" type="number" name="userPhone" class="form-control" placeholder="Phone">
+                                    <input id="userPhone" type="number" value = "<?php if(isset($phone)){ echo $phone;} ?>" name="userPhone" class="<?php echo $phone_error;?> form-control" placeholder="Phone">
                                     <p class=" mt-2 d-none text-danger" id="userPhoneReq">Phone is required.</p>
                                 </div>
                             </div>
-                            <textarea id="message" class="form-control mb-3" name="userMessage" placeholder="Message"   cols="5" rows="5"></textarea>
+                            <textarea id="message" class="<?php echo $message_error;?> form-control mb-3" name="userMessage" placeholder="Message"   cols="5" rows="5"><?php if(isset($msg)){ echo $msg;} ?></textarea>
                             <p class=" my-2 d-none text-danger" id="messageReq">Message is required.</p>
 
-                            <button id="btnSubmit" type="submit" class="btn btn-info px-4 py-2 text-white fw-bold" disabled>Send Message</button>
+                            <button id="btnSubmit" type="submit" class="btn btn-info px-4 py-2 text-white fw-bold">Send Message</button>
                             <span id="success"  class="ms-3 mt-2 d-none text-success">Data Sent Successfuly</span>
                         </form>
                     </div>

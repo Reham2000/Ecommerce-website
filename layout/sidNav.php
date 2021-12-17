@@ -21,15 +21,39 @@
                                 </nav>
                             </div>
 
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts4" aria-expanded="false" aria-controls="collapseLayouts4">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Category
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div style="background-color: unset!important;" class="collapse" id="collapseLayouts4" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?php echo "add_category.php";?>">Add category</a>
+                                    <a class="nav-link" href="<?php echo "all_category.php";?>">Edit / Delete category</a>
+                                </nav>
+                            </div>
+
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts5" aria-expanded="false" aria-controls="collapseLayouts5">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Patients
+                                Products
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div style="background-color: unset!important;" class="collapse" id="collapseLayouts5" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo "add_patient.php";?>">Add Patients</a>
-                                    <a class="nav-link" href="<?php echo "all_patients.php";?>">Edit / Delete Patients</a>
+                                    <a class="nav-link" href="<?php echo "add_products.php";?>">Add Product</a>
+                                    <a class="nav-link" href="<?php echo "all_products.php";?>">Edit / Delete Products</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts6" aria-expanded="false" aria-controls="collapseLayouts6">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Blog
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div style="background-color: unset!important;" class="collapse" id="collapseLayouts6" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="<?php echo "add_artical.php";?>">Add Artical</a>
+                                    <a class="nav-link" href="<?php echo "all_artical.php";?>">Edit / Delete Artical</a>
                                 </nav>
                             </div>
                             

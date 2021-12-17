@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['name'])&& !empty($_P
         <img style="display: block;width:100px;margin:auto;margin-bottom: 20px;" src="img/addMember.png">
         <p class="firstParagraph text-center">Welcome to website dashboard</p>
         <p class="secondParagraph text-center pb-5">From this page you can add new Admin to dashboard</p>
-        <form method="POST" action="" >
+        <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" >
            
             <div class="row  m-2">
               <!--User Name-->

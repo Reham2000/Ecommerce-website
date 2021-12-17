@@ -1,4 +1,7 @@
 /* Start Main Componnet */
+:root{
+  padding: 0!important;
+}
 body{font-family: 'Rubik', sans-serif;overflow-y: hidden;}
 p,small{color: #828282;}
 a{
@@ -340,9 +343,16 @@ input.form-control::placeholder{
 /* End Loading */
 /* Start Main_header */
 #Main_header .logo a{
-  font-size: 2rem;
   color: #09c;
 }
+@media(max-width:770px){
+  #Main_header .brand_name{
+    text-align: center;
+    padding: 15px 0 !important;
+  }
+  
+}
+
 #Main_header .btnSubmit{
   position: absolute;
     top: 50%;

@@ -5,7 +5,9 @@
     <script src="<?php echo $jsPath?>popper.min.js"></script>
     <script src="<?php echo $jsPath?>bootstrap.min.js"></script>
     <script src="<?php echo $jsPath?>owl.carousel.min.js"></script>
+    <script src="<?php echo $jsPath?>dropdown.js"></script>
     <script src="<?php echo $jsPath?>slick.min.js"></script>
+    <script src="<?php echo $jsPath?>semantic.min.js"></script>
     <script src="asset/js/scripts.js"></script>
     <script src="layout/js/datatables-demo.js"></script>
     <script type="module" src="<?php echo $jsPath?><?php echo $script ?>"></script>

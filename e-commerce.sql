@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2021 at 11:36 PM
+-- Generation Time: Dec 17, 2021 at 11:05 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -35,6 +35,14 @@ CREATE TABLE `blog` (
   `time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `adress`, `description`, `img`, `time`) VALUES
+(2, 'Brandon Mcintyre', 'Tempora cillum volup', 'Artical-852591.jpg', '2021/12/17 . 22:44:28'),
+(3, 'Ayanna Porter', 'Enim reprehenderit e', 'Artical-561725.jpg', '2021/12/17 . 22:44:36');
+
 -- --------------------------------------------------------
 
 --
@@ -60,6 +68,37 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `cat_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `cat_name`) VALUES
+(2, 'mobiles');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `msg` text NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `phone`, `msg`, `time`) VALUES
+(1, 'moxudi', 'disebyzu@mailinator.com', 1115343143, 'Sequi ipsum ad volup', '2021/12/17 . 23:58:05'),
+(2, 'moxudi', 'disebyzu@mailinator.com', 1115343143, 'Sequi ipsum ad volup', '2021/12/17 . 23:59:07'),
+(3, 'moxudi', 'disebyzu@mailinator.com', 1115343143, 'Sequi ipsum ad volup', '2021/12/17 . 23:59:23');
 
 -- --------------------------------------------------------
 
@@ -115,6 +154,15 @@ CREATE TABLE `products` (
   `discount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `cat_id`, `product_name`, `price`, `quantity`, `img`, `discount`) VALUES
+(8, 2, 'Maxine Chan', 135, 696, 'Product-239465.webp', 26),
+(10, 2, 'Iris Mccall', 590, 71, 'Product-541982.webp', 96),
+(11, 2, 'Alexis Macdonald', 222, 438, 'Product-817708.webp', 23);
+
 -- --------------------------------------------------------
 
 --
@@ -130,6 +178,14 @@ CREATE TABLE `users` (
   `adress` varchar(255) NOT NULL DEFAULT '0',
   `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `gender`, `adress`, `type`) VALUES
+(1, 'ali', 'ali@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'male', '0', 1),
+(7, 'jygyhacy', 'nybovu@mailinator.com', 'ac748cb38ff28d1ea98458b16695739d7e90f22d', 'male', '0', 2);
 
 -- --------------------------------------------------------
 
@@ -166,6 +222,12 @@ ALTER TABLE `cart`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -214,7 +276,7 @@ ALTER TABLE `wish_list`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -226,7 +288,13 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -244,13 +312,13 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `wish_list`

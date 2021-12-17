@@ -24,7 +24,7 @@ require './layout/topNav.php';
             
                   <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Egypt International Lab</h1>
+                        <h1 class="mt-4">One Tech</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>

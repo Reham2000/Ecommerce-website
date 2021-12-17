@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="asset/css/styles.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="<?php echo $cssPath?>toastr.min.css">
+    <link rel="stylesheet" href="<?php echo $cssPath?>semantic.min.css">
     <script src="<?php echo $jsPath?>jquery-3.5.1.min.js"></script>
     <script src="<?php echo $jsPath?>toastr.min.js"></script>
     <link rel="stylesheet" href="<?php echo $cssPath;?><?php echo $style ?>">

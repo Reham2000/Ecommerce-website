@@ -11,36 +11,41 @@ if ($_GET['from'] == "admins" && isset($_GET['id']) && is_numeric($_GET['id'])){
     $stmt->execute();
     $loc = $_SERVER['HTTP_REFERER'];
     header("Location:$loc");
-}else if($_GET['from'] == "board" && isset($_GET['id']) && is_numeric($_GET['id'])){
-    $board_id = $_GET['id'];
-    $stmt = $con->prepare("DELETE FROM board WHERE id = :board_id");
-    $stmt->bindParam(":board_id" , $board_id);
+}else if($_GET['from'] == "cat" && isset($_GET['id']) && is_numeric($_GET['id'])){
+    $cat_id = $_GET['id'];
+    $stmt = $con->prepare("DELETE FROM categories WHERE id = :cat_id");
+    $stmt->bindParam(":cat_id" , $cat_id);
     $stmt->execute();
-    header("Location:all_board.php");
+    $loc = $_SERVER['HTTP_REFERER'];
+    header("Location:$loc");
 }
-else if($_GET['from'] == "messages" && isset($_GET['id']) && is_numeric($_GET['id'])){
-    $messages_id = $_GET['id'];
-    $stmt = $con->prepare("DELETE FROM contact_us WHERE id = :messages_id");
-    $stmt->bindParam(":messages_id" , $messages_id);
+else if($_GET['from'] == "produucts" && isset($_GET['id']) && is_numeric($_GET['id'])){
+    $peoduct_id = $_GET['id'];
+    $stmt = $con->prepare("DELETE FROM products WHERE id = :peoduct_id");
+    $stmt->bindParam(":peoduct_id" , $peoduct_id);
     $stmt->execute();
-    header("Location:all_messages.php");
+    $loc = $_SERVER['HTTP_REFERER'];
+    header("Location:$loc");
 }
-else if($_GET['from'] == "events" && isset($_GET['id']) && is_numeric($_GET['id'])){
-    $event_id = $_GET['id'];
-    $stmt = $con->prepare("DELETE FROM events WHERE id = :event_id");
-    $stmt->bindParam(":event_id" , $event_id);
+else if($_GET['from'] == "blog" && isset($_GET['id']) && is_numeric($_GET['id'])){
+    $blog_id = $_GET['id'];
+    $stmt = $con->prepare("DELETE FROM blog WHERE id = :blog_id");
+    $stmt->bindParam(":blog_id" , $blog_id);
     $stmt->execute();
-    header("Location:all_events.php");
+    $loc = $_SERVER['HTTP_REFERER'];
+    header("Location:$loc");
 }
 else if($_GET['from'] == "members" && isset($_GET['id']) && is_numeric($_GET['id'])){
     $member_id = $_GET['id'];
     $stmt = $con->prepare("DELETE FROM members WHERE id = :member_id");
     $stmt->bindParam(":member_id" , $member_id);
     $stmt->execute();
-    header("Location:all_members.php");
+    $loc = $_SERVER['HTTP_REFERER'];
+    header("Location:$loc");
 }
 else{
-    header("location:admin_dash.php");
+    $loc = $_SERVER['HTTP_REFERER'];
+    header("Location:$loc");
 }
 require_once "./includes/template/footer.php";
 

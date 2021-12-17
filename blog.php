@@ -5,6 +5,7 @@ $boot = "true";
 $style = "style.css";
 $script="main.js";
 include 'init.php';
+$blogs=getAllData("blog");
 ?>
     <!-- For Loading Screen -->
     <div class="loading d-flex justify-content-center align-items-center">
@@ -24,36 +25,25 @@ include 'init.php';
     <!-- Start Header -->
     <header >
         <!-- Start Main-header -->
-        <section id="Main_header" class="py-2">
+        <section style="padding: 30px 0 !important;" id="Main_header" class="py-2">
             <div class="container">
                 <div class="row  align-items-center ">
     
-                    <div class="col-lg-2 col-sm-3 col-3 order-1">
-                        <div class="logo pt-2">
+                    <div class="col-md-2 brand_name">
+                        <div class="logo">
                             <a href="#">OneTech</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right mt-0 mt-md-4">
-                        <form id="Main_head_form" class="position-relative d-none d-md-block">
+                    <div class="col-md-7">
+                        <form id="Main_head_form" class=" m-auto position-relative d-none d-md-block">
                             <input class="form-control" type="text" placeholder="Search For Products..." required>
-                            <div class="dropdown_list">
-                                <span class="selected-category">All Categories </span>
-                                <i class="fas fa-angle-down"></i>
-                                <ul class=" custom_header list-unstyled shadow">
-                                    <li>All Categories</li>
-                                    <li>Computers</li>
-                                    <li>Laptops</li>
-                                    <li>Cameras</li>
-                                    <li>Hardware</li>
-                                    <li>Smartphones</li>
-                                </ul>
-                            </div>
+                           
                             <button class="btnSubmit" type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="d-flex justify-content-center align-items-center me-3 me-sm-5">
+                    <div class="col-md-3 cart_place">
+                        <div style="justify-content: center;" class="wishlist_cart d-flex">
+                            <div class="d-flex justify-content-center mr-5 align-items-center me-3 me-sm-5">
                                 <div class="image">
                                     <img class="w-100" src="img/wishlist_cart/download.webp" alt="">
                                 </div>
@@ -193,122 +183,26 @@ include 'init.php';
     <section id="blog" class="py-5">
         <div class="container">
             <div class="row g-4">
+
+                <?php foreach($blogs as $blogs_data){ ?>
+
                 <div class="col-lg-4 col-sm-6 col-12">
                     <div class="item bg-white shadow rounded">
                         <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
+                            <img class="w-100 rounded-top" src="img/articals/<?php echo $blogs_data["img"]; ?>" alt="artical">
                         </div>
                         <div class="info p-3">
-                            <p>Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada.</p>
+                            <h3 style="color: #222 !important;font-size: 20px;"><?php echo $blogs_data["adress"]; ?></h3>
+                            <p><?php  echo mb_strimwidth($blogs_data["description"], 0, 200, "...") . " ..."; ?></p>
                             
                         </div>
                         <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>Cras lobortis nisl nec libero pulvinar lacinia. Nunc sed ullamcorper massa.</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
+                <?php } ?>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>Fusce tincidunt nulla magna, ac euismod quam viverra id. Fusce eget metus feugiat</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>Etiam leo nibh, consectetur nec orci et, tempus tempus ex</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>Sed viverra pellentesque dictum. Aenean ligula justo, viverra in lacus porttitor</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>In nisl tortor, tempus nec ex vitae, bibendum rutrum mi. Integer tempus nisi</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>Make Life Easier on Yourself by Accepting “Good Enough.” Don’t Pursue Perfection.</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>13 Reasons You Are Failing At Life And Becoming A Bum</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <div class="item bg-white shadow rounded">
-                        <div class="image">
-                            <img class="w-100 rounded-top" src="img/4.jpg" alt="">
-                        </div>
-                        <div class="info p-3">
-                            <p>4 Steps to Getting Anything You Want In Life</p>
-                            
-                        </div>
-                        <a href="#" role="button" type="button" class="btn btn-info text-white fw-bold ">Continue Reading</a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
