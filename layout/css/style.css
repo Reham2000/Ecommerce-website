@@ -165,7 +165,7 @@ input.form-control::placeholder{
   color: #09c;
   cursor: pointer;
 }
-#New_Arrival .seller-fav{
+ .seller-fav{
   position: absolute;
   top: 35px;
   right: 15px;
@@ -175,13 +175,14 @@ input.form-control::placeholder{
   padding: 0.5rem;
   border-radius: 50%;
   cursor: pointer;
+  box-shadow:0px 1px 10px rgb(0 0 0 / 30%)
 }
 .sell-offer{
   position: absolute;
-  top: -5px;
-  left: 0px;
-  width: 35px;
-  height: 35px;
+  top: -20px;
+  left: -5px;
+  width: 40px;
+  height: 40px;
   font-weight: 500;
   font-size: 0.7rem;
   color: #fff;

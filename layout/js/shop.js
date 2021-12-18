@@ -69,7 +69,7 @@ $('.custom_header li').click(function(){
 // All plugins
 $(document).ready(function(){
   $('.ui.rating')
-  .rating()
+  .rating('disable')
 ;
   // loading
   $('#spinner').fadeOut(500 ,() => {
