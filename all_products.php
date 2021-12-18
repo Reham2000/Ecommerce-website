@@ -93,7 +93,7 @@ echo "<div class='alert alert-danger'>you can not see this page id not exist</di
 
 
                                                     echo "<td>
-                                                    <a href='update_admin.php?id=".$product_data['id']."'
+                                                    <a href='update_product.php?id=".$product_data['id']."'
                                                     class='btn editbtn btn-primary m-2'><i class='bx bxs-edit m-1 '></i> Update</a> " . "</td>";
                                                     echo "<td>
                                                     <a href='delete.php?from=admin&id=".$product_data['id']."&from=produucts'

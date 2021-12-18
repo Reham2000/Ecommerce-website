@@ -6,9 +6,17 @@ include 'init.php';
 // if(isset($_SESSION['role'])){
 require './layout/topNav.php';
 $categories=getAllData("categories");
+
 // incase of exist session
 // if(isset($_SESSION['username'])){
 
+    if(isset($_GET["id"]) && is_numeric($_GET['id'])){
+        $id=$_GET["id"];
+    $data = getData_with_id("products",$id);
+    $categ = getData_with_id("categories",$data['cat_id']);
+    $categ_name = $categ['cat_name'];
+    
+    }
 // incase of send from post and some filed is not empty 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($_POST['p_name']) ){
 
@@ -29,23 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
             $destination = "img/products/" . $avatar ;
 
 
-            /*check if info already added*/
-
-            global $con;
-            $stmt = $con->prepare("SELECT * FROM products WHERE product_name = ?");
-            $stmt->execute(array($p_name));
-            $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-            $count = $stmt->rowCount();
-            if ($count){
-                echo "
-                    <script>
-                        toastr.error('Sorry Admin Email is already excit.')
-                    </script>";
-            }
-            else{
-                insert_product($cat_id,$p_name,$price,$quantity,$discount,$avatar);
+            
+                update_product($cat_id,$p_name,$price,$quantity,$discount,$avatar,$id);
                 move_uploaded_file($tmp_name,$destination);
-            }
+           
 
         }else{
             echo "
@@ -78,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
     <div class="container mainAddForm">
         <img style="display: block;width:100px;margin:auto;margin-bottom: 20px;" src="img/addMember.png">
         <p class="firstParagraph text-center">Welcome to website dashboard</p>
-        <p class="secondParagraph text-center pb-5">From this page you can add new Admin to dashboard</p>
+        <p class="secondParagraph text-center pb-5">From this page you can Update a Product to Dashboard</p>
         <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
            
             <div class="row  m-2">
@@ -87,10 +82,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
                 <div class="col-md-6 mb-3 col-xs-12">
                     <label for="cat_id">Category</label>
                     <select class="custom-select ui search dropdown"  name="cat_id" id="cat_id" required>
-                        <option selected disabled value="">Choose...</option>
+                        <option  value="<?php echo $data['cat_id'] ?>"><?php echo $categ_name ?></option>
 
-                       <?php foreach($categories as $cat){?>
-                            <option value="<? echo $cat['id'];?>"><?php echo $cat["cat_name"]; ?></option>
+                       <?php foreach($categories as $cat){
+                            if($cat['cat_name'] !== $categ_name){?>
+                                <option value="<? echo $cat['id'];?>"><?php echo $cat["cat_name"]; ?></option>
+                                <?php
+                            }
+                            
+                            ?>
                        <?php } ?>
 
                     </select>
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
                 <div class="col-md-6 mb-3 col-xs-12">
                     <label for="p_name">Product Name</label>
                     <input type="text" class="form-control"  id="p_name" 
-                        placeholder="Enter Product Name" required name="p_name" autocomplete="off">
+                        placeholder="Enter Product Name" required name="p_name" autocomplete="off" value="<?php echo $data['product_name'] ?>">
                 </div>
 
                 <!--price-->           
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
                     
                             <div style="width: 100%;" class="input-group-prepend">
                                 <input type="number" required class="form-control" id="price"
-                                placeholder="Enter price" name="price" >
+                                placeholder="Enter price" name="price" value="<?php echo $data['price'] ?>" >
                                 <div class="input-group-text"> $ </div>
 
                     </div>
@@ -122,14 +122,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_id'])&& !empty($
                 <div class="col-md-4 mb-3 col-xs-12">
                     <label for="quantity">Quantity</label>
                     <input type="number" class="form-control" id="quantity"
-                    placeholder="Enter Quantity" required name="quantity" autocomplete="off">
+                    placeholder="Enter Quantity" required name="quantity" autocomplete="off" value="<?php echo $data['quantity'] ?>">
                 </div>
 
                 <!--discount--->
                 <div class="col-md-4 mb-3 col-xs-12">
                     <label for="discount">Discount</label>
                     <select class="custom-select ui search dropdown"  name="discount" id="discount" required>
-                        <option selected disabled value="">Choose...</option>
+                        <option value="<?php echo $data['discount'] ?>"> <?php echo $data['discount'] ?></option>
                             <option value="0"><?php echo "No Discount"; ?></option>
                        <?php for($i=5;$i<=95;$i+=5){?>
                             <option value="<? echo $i;?>"><?php echo $i . " %"; ?></option>

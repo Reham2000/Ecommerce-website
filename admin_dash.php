@@ -49,41 +49,99 @@ require './layout/topNav.php';
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Add Patient</div>
+                                    <div class="card-body">Add Admin</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo "./add_patient.php";?>">Go To Add Patient</a>
+                                        <a class="small text-white stretched-link" href="<?php echo "./add_admin.php";?>">Go To Add Admin</a>
                                         <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">All Patient</div>
+                                    <div class="card-body">All Users</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./all_patients.php">Go To All Patient</a>
+                                        <a class="small text-white stretched-link" href="<?php echo "./all_admins.php";?>">Go To All Users</a>
                                         <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                                <div class="col-md-6 col-12">
+                            <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Add Patient</div>
+                                    <div class="card-body">Add Admin</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo "./add_patient.php";?>">Go To Add Patient</a>
+                                        <a class="small text-white stretched-link" href="<?php echo "./add_admin.php";?>">Go To Add Admin</a>
                                         <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">All Patient</div>
+                                    <div class="card-body">All Admins</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="./all_patients.php">Go To All Patient</a>
+                                        <a class="small text-white stretched-link" href="<?php echo "./all_admins.php";?>">Go To All Admin</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Add Product</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="<?php echo "./add_products.php";?>">Go To Add Product</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">All Products</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./all_products.php">Go To All Products</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">Add Article</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="<?php echo "./add_admin.php";?>">Go To Add Article</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">All Articles [<strong><i>Blog</i></strong>]</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="<?php echo "./all_admins.php";?>">Go To All Articles</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                
+                                <div class="col-xl-3 col-md-6 col-12">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Add Categories</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="<?php echo "./add_category.php";?>">Go To Add Categories</a>
+                                        <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-12">
+                                <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body">All Categories</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="./all_category.php">Go To All Categories</a>
                                         <div class="small text-white"><i class="far fa-hand-point-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
 
                         <div class="card mb-4">
                             <div class="card-header">

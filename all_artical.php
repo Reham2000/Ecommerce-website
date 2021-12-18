@@ -85,7 +85,7 @@ echo "<div class='alert alert-danger'>you can not see this page id not exist</di
                                                     <?php 
                                                     echo "<td>". $artical_data['time'] . "</td>";
                                                     echo "<td>
-                                                    <a href='update_admin.php?id=".$artical_data['id']."'
+                                                    <a href='update_artical.php?id=".$artical_data['id']."'
                                                     class='btn editbtn btn-primary m-2'><i class='bx bxs-edit m-1 '></i> Update</a> " . "</td>";
                                                     echo "<td>
                                                     <a href='delete.php?from=admin&id=".$artical_data['id']."&from=blog'

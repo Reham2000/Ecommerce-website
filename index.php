@@ -59,7 +59,7 @@ include 'init.php';
                                     <div class="cart-count">10</div>
                                 </div>
                                 <div class="cart-info ms-3 text-end ">
-                                    <a href="cart.php" class="fs-5 d-block"><strong>Cart</strong></a>
+                                    <a href="#" class="fs-5 d-block"><strong>Cart</strong></a>
                                     <small>$85</small>
                                 </div>
                             </div>
@@ -1654,7 +1654,7 @@ include 'init.php';
                     <div class="col-lg-4">
                         <div class="item position-relative d-flex justify-content-lg-center justify-content-start align-items-center bg-white rounded-1 p-4 position-relative">
                             <div class="image  me-3">
-                                <img class="w-100" src="img/best-seller/xview_1.jpg.pagespeed.ic.c7PizLSOMV.webp" alt="Item_img">
+                                <img class="w-100" src="img/best-seller/xview_1.jpg.pagespeed.ic.c7PizLSOMV.webp" alt="">
                                 <div class="sell-offer bg-danger">-25%</div>
                             </div>
                             <div class="img-info">

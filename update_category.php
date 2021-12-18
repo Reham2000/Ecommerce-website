@@ -8,28 +8,25 @@ require './layout/topNav.php';
 
 // incase of exist session
 // if(isset($_SESSION['username'])){
-
+    if(isset($_GET["id"]) && is_numeric($_GET['id'])){
+        $id=$_GET["id"];
+    $data = getData_with_id("categories",$id);
+    
+    }
 // incase of send from post and some filed is not empty 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_name'])){
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+    if(empty($_POST["cat_name"]) ){
+        echo "
+        <script>
+            toastr.error('Sorry Category Can not be empty......!')
+        </script>";
+      }else{
+
         $name      = FILTER_VAR( $_POST['cat_name'], FILTER_SANITIZE_STRING);
 
-
-        /*check if info already added*/
-
-        global $con;
-        $stmt = $con->prepare("SELECT * FROM categories WHERE cat_name = ?");
-        $stmt->execute(array($name));
-        $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-        $count = $stmt->rowCount();
-        if ($count){
-            echo "
-                <script>
-                    toastr.error('Sorry Category Name is already excit.')
-                </script>";
-        }
-        else{
-            insert_cat($name);
-        }
+        update_category ($name,$id);
+      } 
 
 
 
@@ -55,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_name'])){
     <div class="container mainAddForm">
         <img style="display: block;width:100px;margin:auto;margin-bottom: 20px;" src="img/addMember.png">
         <p class="firstParagraph text-center">Welcome to website dashboard</p>
-        <p class="secondParagraph text-center pb-5">From this page you can add new Category to dashboard</p>
+        <p class="secondParagraph text-center pb-5">From this page you can Update a Category to dashboard</p>
         <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" >
            
             <div class="row  m-2">
@@ -63,13 +60,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['cat_name'])){
                 <div class="col-md-6 m-auto col-xs-12">
                     <label for="Name">Category Name</label>
                     <input type="text" class="form-control"  id="Name " 
-                        placeholder="Enter Category name" required name="cat_name" autocomplete="off">
+                        placeholder="Enter Category name" required name="cat_name" autocomplete="off" value="<?php echo $data['cat_name']?>">
                 </div>
 
               </div>
               
               <!--btn -> add--->
-                <button style="margin-top: 15px !important;" class="btn btn-primary d-block m-auto mt-3 ml-4">Add to Categories </button>
+                <button style="margin-top: 15px !important;" class="btn btn-primary d-block m-auto mt-3 ml-4">Update Categories </button>
             </form>
         </div>
         </div>

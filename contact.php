@@ -3,7 +3,7 @@ session_start();
 ob_start(); 
 $boot = "true";
 $style = "style.css";
-// $script="main.js";
+$script="main.js";
 include 'init.php';
 
 
@@ -65,13 +65,8 @@ if (isset($formErrors)){
 
 
 ?>
-<style>
-    body{
-        overflow-y: unset ;
-    }
-</style>
     <!-- For Loading Screen -->
-    <!-- <div class="loading d-flex justify-content-center align-items-center">
+    <div class="loading d-flex justify-content-center align-items-center">
         <div id="spinner" class="sk-cube-grid">
             <div class="sk-cube sk-cube1"></div>
             <div class="sk-cube sk-cube2"></div>
@@ -83,7 +78,7 @@ if (isset($formErrors)){
             <div class="sk-cube sk-cube8"></div>
             <div class="sk-cube sk-cube9"></div>
           </div>
-    </div> -->
+    </div>
     <!-- End Loading -->
     <!-- Start Header -->
     <header >
@@ -160,10 +155,10 @@ if (isset($formErrors)){
                             <a id="homeLink" class="nav-link " aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item position-relative">
-                            <a id="SuperLink" class="nav-link" href="index.php#deals_featured">Super Deals</a>
+                            <a id="SuperLink" class="nav-link" href="#deals_featured">Super Deals</a>
                         </li>
                         <li class="nav-item position-relative">
-                            <a id="FeaturedLink" class="nav-link" href="index.php#New_Arrival">New Arrival</a>
+                            <a id="FeaturedLink" class="nav-link" href="#New_Arrival">New Arrival</a>
                         </li>
                         <li class="nav-item position-relative">
                             <a id="PagesLink" class="nav-link" href="#">Pages <i class="fas fa-angle-down"></i></a>

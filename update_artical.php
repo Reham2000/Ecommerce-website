@@ -9,12 +9,39 @@ $categories=getAllData("categories");
 // incase of exist session
 // if(isset($_SESSION['username'])){
 
+    if(isset($_GET["id"]) && is_numeric($_GET['id'])){
+        $id=$_GET["id"];
+    $data = getData_with_id("blog",$id);
+    
+    }
 // incase of send from post and some filed is not empty 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($_POST['desc']) ){
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+
+    if(empty($_POST["adress"]) || empty($_POST["desc"])){
+        echo "
+        <script>
+            toastr.error('Sorry descrbtion or title Can not be empty......!')
+        </script>";
+      }else if(!is_string($_POST["adress"]) || !is_string($_POST["desc"])){
+        echo "
+        <script>
+            toastr.error('Sorry descrbtion or title Should be string only......!')
+        </script>";
+      }else if(strlen($_POST["adress"])<5){
+        echo "
+        <script>
+            toastr.error('Sorry Title Should be more than 5 characters......!')
+        </script>";
+      }else if( strlen($_POST["desc"])<5){
+        echo "
+        <script>
+            toastr.error('Sorry Content Should be more than 15 characters......!')
+        </script>";
+      }else{
         $adress         = FILTER_VAR( $_POST['adress'], FILTER_SANITIZE_STRING);
-        $desc         = FILTER_VAR( $_POST['desc'], FILTER_SANITIZE_STRING);
-
+        $desc           = FILTER_VAR( $_POST['desc'], FILTER_SANITIZE_STRING);
+        $time           = date('d-m-Y   [ H:i:s ]');
         $avatar_name = $_FILES["img"]["name"];
         $size = $_FILES["img"]["size"];
         $tmp_name = $_FILES["img"]["tmp_name"];
@@ -25,24 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($
             $avatar = "Artical-" . rand(0,1000000) . "." . $extention ;
             $destination = "img/articals/" . $avatar ;
 
-
+            update_blog($adress,$desc,$avatar,$time,$id);
+            move_uploaded_file($tmp_name,$destination);
             /*check if info already added*/
 
-            global $con;
-            $stmt = $con->prepare("SELECT * FROM blog WHERE adress = ?");
-            $stmt->execute(array($adress));
-            $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-            $count = $stmt->rowCount();
-            if ($count){
-                echo "
-                    <script>
-                        toastr.error('Sorry Artical is already excit.')
-                    </script>";
-            }
-            else{
-                insert_blog($adress,$desc,$avatar);
-                move_uploaded_file($tmp_name,$destination);
-            }
+           
 
         }else{
             echo "
@@ -51,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($
             </script>";
         }  
 
-
+    }
     }
     
     // else{
@@ -75,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($
     <div class="container mainAddForm">
         <img style="display: block;width:100px;margin:auto;margin-bottom: 20px;" src="img/addMember.png">
         <p class="firstParagraph text-center">Welcome to website dashboard</p>
-        <p class="secondParagraph text-center pb-5">From this page you can add new Artical to dashboard</p>
+        <p class="secondParagraph text-center pb-5">From this page you can Update An Artical to dashboard</p>
         <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
            
             <div class="row  m-2">
@@ -83,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($
                 <div class="col-md-6 mb-3 col-xs-12">
                     <label for="adress">Artical Name</label>
                     <input type="text" class="form-control"  id="adress" 
-                        placeholder="Enter Artical Name" required name="adress" autocomplete="off">
+                        placeholder="Enter Artical Name" required name="adress" autocomplete="off" value="<?php echo $data['adress'] ?>">
                 </div>
 
                 <!--img-->
@@ -93,13 +107,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty( $_POST['adress'])&& !empty($
                 </div>
                 <div class="col-md-12 mt-3">
                     <label for="des">Description</label>
-                    <textarea id="des" name="desc" class="form-control" placeholder="Enter Arical description:" rows="4" required autocomplete="off"></textarea>
+                    <textarea id="des" name="desc" class="form-control" placeholder="Enter Arical description:" rows="4" required autocomplete="off" ><?php echo $data['description'] ?></textarea>
                 </div>  
 
               </div>
               
               <!--btn -> add--->
-                <button style="margin-top: 30px !important;padding: 15px 30;" class="btn btn-primary d-block m-auto">Add Artical </button>
+                <button style="margin-top: 30px !important;padding: 15px 30;" class="btn btn-primary d-block m-auto">Update Artical </button>
             </form>
         </div>
         </div>

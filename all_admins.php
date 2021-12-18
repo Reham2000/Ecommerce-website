@@ -30,7 +30,7 @@ echo "<div class='alert alert-danger'>you can not see this page id not exist</di
               <a href="add_admin.php">  <button style="padding: 7px 25px;" type="button" name="add" class="btn btn-success ml-4 mt-5">Add  <i class='bx bxs-user-plus'></i></button></a>
               <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">IEEE-BUB SB</h1>
+                        <h1 class="mt-4">One Tech</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item">Dashboard</li>
                             <li class="breadcrumb-item active">All Admins</li>
@@ -73,9 +73,9 @@ echo "<div class='alert alert-danger'>you can not see this page id not exist</di
                                                     echo "<td>". $admin_data['username'] . "</td>";
                                                     echo "<td>". $admin_data['email'] . "</td>";
 
-                                                    if($admin_data['gender'] =="male"){
+                                                    if($admin_data['gender'] =="Male"){
                                                         echo "<td>". "Male" ."</td>";
-                                                    }elseif($admin_data['gender'] == "female"){
+                                                    }elseif($admin_data['gender'] == "Female"){
                                                         echo "<td>". "Female" ."</td>";
                                                     }
 

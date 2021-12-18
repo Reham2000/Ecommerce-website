@@ -2,11 +2,10 @@
 session_start();
 ob_start(); 
 $boot = "true";
-$script="shop.js";
-$style = "shop.css";
+$script="main.js";
+$style = "style.css";
 include 'init.php';
 ?>
-
     <!-- For Loading Screen -->
     <div class="loading d-flex justify-content-center align-items-center">
         <div id="spinner" class="sk-cube-grid">
@@ -255,11 +254,8 @@ include 'init.php';
                     <hr>
                     <div class="items">
                         <div class="row g-4 highrest_rate">
-                            
-
-                            <div class="col-md-4 col-sm-4 col-6">
+                            <div class="col-md-3 col-sm-4 col-6">
                                 <div class="item">
-                                    <a href="#">
                                     <div class="image position-relative my-3">
                                         <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
                                         <div class="sell-offer bg-danger">-25%</div>
@@ -269,46 +265,109 @@ include 'init.php';
                                         <div class="price d-flex justify-content-between flex-column">
                                             <small class="me-2 ">Headphone</small>
                                             <a class="pro_name mb-2">Huawei MediaPad</a>
-                                            <div style="margin: auto;" class="ui large star rating mt-3 mb-4" data-rating="3" data-max-rating="5"></div>
-                                            <a href="index.php" class="ui vertical animated button" tabindex="0">
-                                            <div class="hidden content">Shop</div>
-                                            <div class="visible content">
-                                                <i class="shop icon"></i>
-                                            </div>
-                                            </a>
                                         </div>
                                     </div>
-                                </a>
                                 </div>
                                 
                             </div>
 
-                            <div class="col-md-4 col-sm-6">
-                                <div class="item">
-                                <a href="#">
+                            <div class="col-md-3 col-sm-4 col-6 ">
+                                <div class="item  ">
                                     <div class="image position-relative my-3">
-                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
-                                        <div class="sell-offer">New</div>
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
                                     </div>
                                     <div class="img-info text-center">
                                         <span>$357</span>
                                         <div class="price d-flex justify-content-between flex-column">
-                                            <small class="me-2 ">Smartphone</small>
-                                            <a class="pro_name mb-2">LUNA</a>
-                                            <div style="margin: auto;" class="ui large star rating mt-3 mb-4" data-rating="3" data-max-rating="5"></div>
-                                            <a href="index.php" class="ui vertical animated button" tabindex="0">
-                                            <div class="hidden content">Shop</div>
-                                            <div class="visible content">
-                                                <i class="shop icon"></i>
-                                            </div>
-                                            </a>
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
                                         </div>
                                     </div>
-                                    </a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <a href="product.php">
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
                                 <div class="item">
                                     <div class="image position-relative my-3">
                                         <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
@@ -319,17 +378,690 @@ include 'init.php';
                                         <div class="price d-flex justify-content-between flex-column">
                                             <small class="me-2 ">Smartphone</small>
                                             <a class="pro_name mb-2">LUNA</a>
-                                            <div style="margin: auto;" class="ui large star rating mt-3 mb-4" data-rating="3" data-max-rating="5"></div>
-                                            <a href="index.php" class="ui vertical animated button" tabindex="0">
-                                                <div class="hidden content">Shop</div>
-                                                <div class="visible content">
-                                                    <i class="shop icon"></i>
-                                                </div>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-4 col-6 ">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Huawei MediaPad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-4 col-6">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">LUNA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <nav >
+                                <ul class="pagination justify-content-center mb-0 mt-3">
+                                    <li class="page-item disabled">
+                                        <a class="page-link">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="row g-4 name d-none">
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Huawei MediaPad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">LUNA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Huawei MediaPad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">LUNA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <nav >
+                                <ul class="pagination justify-content-center mb-0 mt-3">
+                                    <li class="page-item disabled">
+                                        <a class="page-link">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="row g-4 price d-none">
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Huawei MediaPad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">LUNA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_1.png.pagespeed.ic.nzWvRNeKk3.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Huawei MediaPad</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-md-3 col-sm-6  ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_3.png.pagespeed.ic.wmJbCYIZcx.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">SmartWatch</small>
+                                            <a class="pro_name mb-2">Sony MDRZX310W</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xfeatured_6.png.pagespeed.ic.KkzNytvHVM.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">Samsung J330F</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/deals-featured/xdeals.png.pagespeed.ic.nmhfwwkKMA.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Headphone</small>
+                                            <a class="pro_name mb-2">Beoplay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_2.jpg.pagespeed.ic.HKQA4qV2Mn.webp" alt="">
+                                        <div class="sell-offer ">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Ipod</small>
+                                            <a class="pro_name mb-2">Transcend T.Sonic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_4.jpg.pagespeed.ic.YvShdYiv_G.webp" alt="">
+                                        <div class="sell-offer bg-danger">-25%</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Mouse</small>
+                                            <a class="pro_name mb-2">Rapoo T8 White</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 ">
+                                <div class="item  ">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_8.jpg.pagespeed.ic.lAcp8-nlW0.webp" alt="">
+                                        <div class="sell-offer d-none">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Camera</small>
+                                            <a class="pro_name mb-2">Canon EF</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div class="item">
+                                    <div class="image position-relative my-3">
+                                        <img  src="img/new-arrivals/xnew_6.jpg.pagespeed.ic.K3dGMH41m4.webp" alt="">
+                                        <div class="sell-offer">New</div>
+                                    </div>
+                                    <div class="img-info text-center">
+                                        <span>$357</span>
+                                        <div class="price d-flex justify-content-between flex-column">
+                                            <small class="me-2 ">Smartphone</small>
+                                            <a class="pro_name mb-2">LUNA</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <nav >
@@ -607,9 +1339,5 @@ include 'init.php';
 
 
     <?php 
-    $now = time(); // or your date as well
-    $your_date = strtotime("2021-12-15");
-    $datediff = $now - $your_date;
-    echo round($datediff / (60 * 60 * 24))-1;
 require './includes/template/footer.php';
 ?>
